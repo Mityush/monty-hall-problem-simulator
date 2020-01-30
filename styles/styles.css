@@ -62,6 +62,10 @@ h2 {
   border: none;
 }
 
+.titlediv {
+  margin: 0 auto;
+}
+
 .doors {
   display: flex;
   justify-content: center;
