@@ -63,7 +63,7 @@ h2 {
 }
 
 .door:hover, .door2:hover {
-  background-color: #000000;
+  background-color: #337733;
 }
 
 .door:hover {
@@ -84,7 +84,7 @@ h2 {
   padding: 2rem;
   color: #ffffff;
   background-image: none;
-  background-color: #333333;
+  background-color: #000000;
   background-size: cover;
   background-position: center;
   border-radius: 5px;
