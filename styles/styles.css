@@ -49,10 +49,16 @@ h2 {
   border: none;
   color: black;
   text-align: center;
+  width: fit-content;
 }
 
-.title:hover {
+.titleinner {
   cursor: pointer;
+  border: none;
+}
+
+.titleinner:hover {
+  border: none;
 }
 
 .doors {
