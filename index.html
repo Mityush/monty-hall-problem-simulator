@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Monty Hall Problem Simulator</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap" rel="stylesheet" />
+  <link id="hoversheet12" rel="stylesheet" type="text/css" href="./styles/door1hov.css" />
+  <link id="hoversheet22" rel="stylesheet" type="text/css" href="./styles/door2hov.css" />
+  <link id="hoversheet32" rel="stylesheet" type="text/css" href="./styles/door3hov.css" />
+  <link rel="stylesheet" href="./styles/jquery.css">
+  <script src="./scripts/jquery.js"></script>
+  <script src="./scripts/jqueryui.js"></script>
+  <script src="./scripts/index.js"></script>
+  <link rel="stylesheet" type="text/css" href="./styles/styles.css" />
+</head>
+
+<body>
+  <div class="content">
+    <h1 class="title" onclick="reset()">Monty Hall Problem Simulator</h1>
+    <div id="rulesDialog" title="Rules / How to Play">
+      <ul>
+        <li>You, as the contestant on a game show, are presented with three doors.</li>
+        <li>Behind two of the three doors are goats, and behind the other door is a new car.</li>
+        <li>First, you choose any door at random.</li>
+        <li>Then, after you make your initial choice, the game show host opens one of the two remaining doors to reveal
+          one of the two goats (the game show host knows where the car is and will never open a door that would reveal
+          the
+          hidden car).</li>
+        <li>Lastly, you are given the option to either stick with your original choice or switch to the other closed
+          door.
+        </li>
+        <li class="last-li">Naturally, you win whatever is behind the door you ultimately choose, which hopefully is a
+          new
+          car!</li>
+      </ul>
+    </div>
+    <div class="buttons">
+      <button id="rules">Rules</button>
+      <div id="aboutDialog" title="About the Game">Despite being very simple at its core, the Monty Hall problem is an
+        oddly confusing probability puzzle that has confounded people for decades, including some otherwise really smart
+        folks who simply don't believe the counterintuitive results. Here, you can play an interactive, simulated
+        version of the Monty Hall problem (loosely based on the original version of Let's Make a Deal) as many times as
+        you want to try to figure out which strategy works best (and more important, why it works).</div>
+      <button id="about">About</button>
+      <div id="statsDialog" title="My Game Stats"></div>
+      <button id="stats">Stats</button>
+      <button id="reset" class="reset" onclick="reset()">Reset</button>
+    </div>
+    <div class="doors" id="doors">
+      <div class="door" id="door1" onclick="play(1)"><b class="doortitle">Door #1</b></div>
+      <div class="door" id="door2" onclick="play(2)"><b class="doortitle">Door #2</b></div>
+      <div class="door" id="door3" onclick="play(3)"><b class="doortitle">Door #3</b></div>
+    </div>
+    <div class="doors2" id="doors2">
+      <div class="door2" id="door12" onclick=""><b class="doortitle">Door #1</b class="doortitle"></div>
+      <div class="door2" id="door22" onclick=""><b class="doortitle">Door #2</b class="doortitle"></div>
+      <div class="door2" id="door32" onclick=""><b class="doortitle">Door #3</b class="doortitle"></div>
+    </div>
+    <div class="messageContainer">
+      <p id="message">
+        Choose any door above to play! ☝️ 🚪 🐐 🚗
+      </p>
+    </div>
+  </div>
+  <footer class="footer">
+    <p>Built with lots of ❤️ & ☕ by <a href="https://twitter.com/sjc52" target="_blank">Samuel Cook</a>. All game logic
+      coded from scratch in Vanilla JS. Hosted with Netlify. Please let me know if you have comments on my code or
+      implementation of this puzzle or if you've found a bug. I'm still learning and really appreciate constructive
+      criticism.</p>
+    <p>Like what you see? <a href="mailto:hi@scook.io">Hire me as a web developer and/or designer!</a></p>
+    <p><b>DISCLAIMER:</b> You can't actually win anything real on this site, as this is just a
+      simulation for
+      educational and entertainment purposes. This site is provided AS IS, with no warranties of any kind, whether
+      express or implied.</p>
+    <p class="last-footer">© 2020</p>
+  </footer>
+</body>
+
+</html>

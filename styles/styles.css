@@ -1,0 +1,283 @@
+html {
+  font-family: "Roboto Mono", monospace;
+  font-size: 14px;
+  color: #222222;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0 2rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.doortitle {
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 3.25rem;
+}
+
+a {
+  text-decoration: none;
+  border-bottom: 1px solid #555555;
+  color: #000000;
+}
+
+a:hover {
+  border-bottom: 1px solid #000000;
+  font-weight: bold;
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-weight: normal;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin: 2rem 0 0 0;
+  font-weight: bold;
+  border: none;
+  color: black;
+  text-align: center;
+}
+
+.title:hover {
+  cursor: pointer;
+}
+
+.doors {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  font-weight: bold;
+}
+
+.door:hover {
+  cursor: pointer;
+  background-color: #222222;
+}
+
+.doors2 {
+  display: none;
+  justify-content: center;
+  margin: 2rem 0;
+  font-weight: bold;
+}
+
+.door,
+.door2 {
+  width: 10rem;
+  height: 10rem;
+  padding: 2rem;
+  color: #ffffff;
+  background-image: url(../assets/door.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+  margin: 0 1rem;
+  text-align: center;
+}
+
+#message {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0 auto 2rem auto;
+  text-align: center;
+  max-width: 75%;
+}
+
+footer {
+  font-size: 0.8rem;
+  color: #777777;
+  border-top: 1px solid #bbbbbb;
+}
+
+.last-footer {
+  margin-bottom: 2rem;
+}
+
+.lose {
+  color: darkred;
+  font-weight: bold;
+}
+
+.win {
+  color: darkgreen;
+  font-weight: bold;
+}
+
+.reset {
+  display: none;
+}
+
+.buttons {
+  display: flex;
+  margin: 2rem 0;
+  justify-content: center;
+}
+
+#stats, #reset {
+  display: none;
+}
+
+#rules, #stats, #reset, #about {
+  font-size: 1rem;
+  font-family: "Roboto Mono", monospace;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+}
+
+#reset, #about, #stats {
+  margin-left: 1rem;
+}
+
+#stats:hover,
+#reset:hover,
+#rules:hover,
+#about:hover {
+  cursor: pointer;
+}
+
+#door1,
+#door12 {
+  margin-left: 0;
+}
+
+#door3,
+#door32 {
+  margin-right: 0;
+}
+
+ul {
+  padding-left: 1.25rem;
+  margin: 1rem 0; 
+}
+
+#aboutDialog, #statsDialog {
+  margin: 1rem 0;
+}
+
+li {
+  padding-left: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.last-li {
+  padding-bottom: 0;
+}
+
+
+/* sticky footer */
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  flex: 1 0 auto;
+}
+.footer {
+  flex-shrink: 0;
+}
+/* end sticky footer */
+
+html body div.ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-draggable.ui-resizable {
+  max-width: 700px;
+}
+
+
+
+@media screen and (max-width: 100000px) {
+  html {
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  html {
+    font-size: 14.5px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  html {
+    font-size: 13.5px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 13px;
+  }
+  #message {
+    max-width: none;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  html {
+    font-size: 12.5px;
+  }
+  .door, .door2 {
+    padding: 1rem;
+    margin: 0 1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 12px;
+  }
+  .door, .door2 {
+    padding: 0.75rem;
+    margin: 0 0.75rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 11.5px;
+  }
+  .door, .door2 {
+    padding: 0.5rem;
+    margin: 0 0.5rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 11px;
+  }
+}
+
