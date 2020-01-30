@@ -262,7 +262,7 @@ html body div.ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dr
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 350px) {
   #stats,
   #reset,
   #rules,
