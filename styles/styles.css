@@ -55,7 +55,6 @@ h2 {
 .titleinner {
   cursor: pointer;
   border: none;
-  text-align: center;
 }
 
 .titleinner:hover {
