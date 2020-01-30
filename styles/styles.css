@@ -261,3 +261,13 @@ html body div.ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dr
     margin: 0 0.75rem;
   }
 }
+
+@media screen and (max-width: 500px) {
+  #stats,
+  #reset,
+  #rules,
+  #about {
+    margin: 0.5rem;
+    font-size: 0.9rem;
+  }
+}
