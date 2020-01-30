@@ -183,7 +183,7 @@ function switchDoors(bool) {
       switchLosses++;
       document.querySelector(
         '#message',
-      ).innerHTML = `<p class="lose">Uh oh, you lost. The car was behind door #${internalChoice}. In this case, it didn't work to switch doors.</p>`;
+      ).innerHTML = `<p class="lose">Uh oh, the car was behind door #${internalChoice}. In this case, it didn't work to switch doors.</p>`;
     } else if (switchDoor === false) {
       stayWins++;
       document.querySelector(
@@ -203,7 +203,7 @@ function switchDoors(bool) {
       stayLosses++;
       document.querySelector(
         '#message',
-      ).innerHTML = `<p class="lose">Uh oh, you lost. The car was behind door #${internalOption}. Maybe next time you should switch doors?`;
+      ).innerHTML = `<p class="lose">Uh oh, the car was behind door #${internalOption}. Consider switching doors next time?`;
     }
   }
   document.querySelector('#reset').style.display = 'block';
@@ -220,7 +220,7 @@ function letsGo(userChoice, userWinner, userHint, option) {
   document.getElementById(`hoversheet${internalHint}2`).disabled = true;
   document.querySelector(
     '#message',
-  ).innerHTML = `OK, you chose door #${internalChoice}, and we can see there's a goat behind door #${internalHint}, which means the car is behind either door #${internalChoice} (your original choice) or door #${internalOption}. Click on door #${internalChoice} to stay or door #${internalOption} to switch. Good luck!`;
+  ).innerHTML = `OK, there's a goat behind door #${internalHint}, so the car is either behind door #${internalChoice} (your original choice) or door #${internalOption}.`;
   document
     .querySelector(`#door${internalChoice}2`)
     .setAttribute('onclick', 'switchDoors(false)');
