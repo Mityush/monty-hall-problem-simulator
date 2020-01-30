@@ -62,9 +62,12 @@ h2 {
   font-weight: bold;
 }
 
+.door:hover, .door2:hover {
+  background-color: #000000;
+}
+
 .door:hover {
   cursor: pointer;
-  background-color: #222222;
 }
 
 .doors2 {
@@ -80,7 +83,8 @@ h2 {
   height: 10rem;
   padding: 2rem;
   color: #ffffff;
-  background-image: url(../assets/door.jpg);
+  background-image: none;
+  background-color: #333333;
   background-size: cover;
   background-position: center;
   border-radius: 5px;
@@ -136,6 +140,10 @@ footer {
   border-radius: 5px;
   padding: 0.5rem 1rem;
   font-weight: bold;
+}
+
+#rules:hover, #stats:hover, #reset:hover, #about:hover {
+background-color: white;
 }
 
 #reset, #about, #stats {

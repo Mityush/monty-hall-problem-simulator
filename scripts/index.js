@@ -155,14 +155,10 @@ function reset() {
   document.querySelector(
     '#door32',
   ).innerHTML = '<b class="doortitle">Door #3</b>';
-  // revert doors2 text color
-  document.querySelector('#door12').style.backgroundColor = '#333333';
-  document.querySelector('#door22').style.backgroundColor = '#333333';
-  document.querySelector('#door32').style.backgroundColor = '#333333';
   // revert doors2 background image
-  document.querySelector('#door12').style.backgroundImage = 'url(./assets/door.jpg)';
-  document.querySelector('#door22').style.backgroundImage = 'url(./assets/door.jpg)';
-  document.querySelector('#door32').style.backgroundImage = 'url(./assets/door.jpg)';
+  document.querySelector('#door12').style.backgroundImage = 'none';
+  document.querySelector('#door22').style.backgroundImage = 'none';
+  document.querySelector('#door32').style.backgroundImage = 'none';
   // get rid of play again button
   document.querySelector('#reset').style.display = 'none';
 }
@@ -181,7 +177,7 @@ function switchDoors(bool) {
   document.querySelector('#door22').setAttribute('onclick', 'reset()');
   document.querySelector('#door32').setAttribute('onclick', 'reset()');
   if (version === 1 || version === 2 || version === 3) {
-    document.querySelector(`#door${internalOption}2`).style.backgroundImage = 'url(./assets/goat.jpg)';
+    document.querySelector(`#door${internalOption}2`).style.backgroundImage = 'url(./assets/goat2.jpg)';
     document.querySelector(`#door${internalChoice}2`).style.backgroundImage = 'url(./assets/car.jpg)';
     if (switchDoor === true) {
       switchLosses++;
@@ -196,7 +192,7 @@ function switchDoors(bool) {
     }
   } else {
     document.querySelector(`#door${internalOption}2`).style.backgroundImage = 'url(./assets/car.jpg)';
-    document.querySelector(`#door${internalChoice}2`).style.backgroundImage = 'url(./assets/goat.jpg)';
+    document.querySelector(`#door${internalChoice}2`).style.backgroundImage = 'url(./assets/goat2.jpg)';
 
     if (switchDoor === true) {
       switchWins++;
