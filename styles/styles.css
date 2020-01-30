@@ -203,10 +203,8 @@ body {
 /* end sticky footer */
 
 html body div.ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-draggable.ui-resizable {
-  max-width: 700px;
+  width: 700px;
 }
-
-
 
 @media screen and (max-width: 100000px) {
   html {
