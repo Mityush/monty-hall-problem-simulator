@@ -177,9 +177,9 @@ function switchDoors(bool) {
   document.getElementById('hoversheet22').disabled = true;
   document.getElementById('hoversheet32').disabled = true;
   document.getElementById('stats').style.display = 'block';
-  document.querySelector('#door12').onclick = '';
-  document.querySelector('#door22').onclick = '';
-  document.querySelector('#door32').onclick = '';
+  document.querySelector('#door12').setAttribute('onclick', 'reset()');
+  document.querySelector('#door22').setAttribute('onclick', 'reset()');
+  document.querySelector('#door32').setAttribute('onclick', 'reset()');
   if (version === 1 || version === 2 || version === 3) {
     document.querySelector(`#door${internalOption}2`).style.backgroundImage = 'url(./assets/goat.jpg)';
     document.querySelector(`#door${internalChoice}2`).style.backgroundImage = 'url(./assets/car.jpg)';
