@@ -262,12 +262,12 @@ html body div.ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dr
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 400px) {
   #stats,
   #reset,
   #rules,
   #about {
-    margin: 0.5rem;
-    font-size: 0.9rem;
+    padding: 0.5rem;
+    font-size: 0.95rem;
   }
 }
