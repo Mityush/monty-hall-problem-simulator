@@ -276,4 +276,8 @@ html body div.ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dr
   .doortitle {
     font-size: 1.2rem;
   }
+
+  .title {
+    font-size: 1.5rem;
+  }
 }
