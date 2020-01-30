@@ -256,9 +256,6 @@ html body div.ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dr
 }
 
 @media screen and (max-width: 600px) {
-  html {
-    font-size: 12px;
-  }
   .door, .door2 {
     padding: 0.75rem;
     margin: 0 0.75rem;
@@ -266,18 +263,9 @@ html body div.ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dr
 }
 
 @media screen and (max-width: 500px) {
-  html {
-    font-size: 12px;
-  }
   .door, .door2 {
     padding: 0.5rem;
     margin: 0 0.5rem;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  html {
-    font-size: 12px;
   }
 }
 
