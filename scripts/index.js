@@ -47,7 +47,7 @@ let version;
 
 /*  FUNCTIONS
 --------------------------------------------------------*/
-
+// JQUERY DIALOG BOX FUNCTIONS
 $(() => {
   $('#aboutDialog').dialog({
     autoOpen: false,
@@ -99,14 +99,15 @@ function stats() {
     stayPercentage = 'N/A';
   }
 
-  document.querySelector('#statsDialog').innerHTML = `<b>WHEN I'VE STAYED:</b><br>
-      - Win Rate: ${stayPercentage}<br>
-      - Wins: ${stayWins}<br>
-      - Losses: ${stayLosses}<br><br>
+  document.querySelector('#statsDialog').innerHTML = `
       <b>WHEN I'VE SWITCHED:</b><br>
       - Win Rate: ${switchPercentage}<br>
       - Wins: ${switchWins}<br>
-      - Losses: ${switchLosses}`;
+      - Losses: ${switchLosses}<br><br>
+      <b>WHEN I'VE STAYED:</b><br>
+      - Win Rate: ${stayPercentage}<br>
+      - Wins: ${stayWins}<br>
+      - Losses: ${stayLosses}`;
 }
 
 // OPERATIONAL: switches to second set of doors after first choice is made (called by letsGo function)
