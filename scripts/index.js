@@ -136,7 +136,7 @@ function reset() {
   // revert to invitation to play
   document.querySelector(
     '#message',
-  ).innerHTML = '<p class="message">Choose any door above to play! ☝️ 🚪 🐐 🚗</p>';
+  ).innerHTML = '<p class="message">Click on any door above to play! ☝️ 🚪 🐐 🚗</p>';
   // revert stylesheet state
   document.getElementById('hoversheet12').disabled = false;
   document.getElementById('hoversheet22').disabled = false;
@@ -187,12 +187,12 @@ function switchDoors(bool) {
       switchLosses++;
       document.querySelector(
         '#message',
-      ).innerHTML = `<p class="lose">Uh oh, you lost. The car was behind door #${internalChoice}. In this case, it didn't work to switch doors.</p>`;
+      ).innerHTML = `<p class="lose">Uh oh, you lost. The car was behind door #${internalChoice}. In this case, it didn't work to switch doors.</p>`;
     } else if (switchDoor === false) {
       stayWins++;
       document.querySelector(
         '#message',
-      ).innerHTML = `<p class="win">You win! In this case, it worked to stay with door #${internalChoice}.`;
+      ).innerHTML = `<p class="win">You win! In this case, it worked to stay with door #${internalChoice}.`;
     }
   } else {
     document.querySelector(`#door${internalOption}2`).style.backgroundImage = 'url(./assets/car.jpg)';
@@ -202,12 +202,12 @@ function switchDoors(bool) {
       switchWins++;
       document.querySelector(
         '#message',
-      ).innerHTML = `<p class="win">You win! Nice strategy switching to door #${internalOption}.</p>`;
+      ).innerHTML = `<p class="win">You win! Nice strategy switching to door #${internalOption}.</p>`;
     } else if (switchDoor === false) {
       stayLosses++;
       document.querySelector(
         '#message',
-      ).innerHTML = `<p class="lose">Uh oh, you lost. The car was behind door #${internalOption}. Maybe next time you should switch doors?`;
+      ).innerHTML = `<p class="lose">Uh oh, you lost. The car was behind door #${internalOption}. Maybe next time you should switch doors?`;
     }
   }
   document.querySelector('#reset').style.display = 'block';
@@ -224,7 +224,7 @@ function letsGo(userChoice, userWinner, userHint, option) {
   document.getElementById(`hoversheet${internalHint}2`).disabled = true;
   document.querySelector(
     '#message',
-  ).innerHTML = `Alright, you chose door #${internalChoice}, and now we know there's a goat behind door #${internalHint}. This means the car is either behind door #${internalChoice} (your original choice) or door #${internalOption}. Click on door #${internalChoice} to stay or door #${internalOption} to switch. Good luck!`;
+  ).innerHTML = `OK, you chose door #${internalChoice}, and we can see there's a goat behind door #${internalHint}, which means the car is behind either door #${internalChoice} (your original choice) or door #${internalOption}. Click on door #${internalChoice} to stay or door #${internalOption} to switch. Good luck!`;
   document
     .querySelector(`#door${internalChoice}2`)
     .setAttribute('onclick', 'switchDoors(false)');
@@ -233,10 +233,10 @@ function letsGo(userChoice, userWinner, userHint, option) {
     .setAttribute('onclick', 'switchDoors(true)');
   document.querySelector(
     `#door${internalOption}2`,
-  ).innerHTML = `<b class="doortitle">Door #${internalOption}</b><p>Click here to SWITCH</p>`;
+  ).innerHTML = `<b class="doortitle">Door #${internalOption}</b><p>Click here to SWITCH</p>`;
   document.querySelector(
     `#door${internalChoice}2`,
-  ).innerHTML = `<b class="doortitle">Door #${internalChoice}</b><p>Click here to STAY</p>`;
+  ).innerHTML = `<b class="doortitle">Door #${internalChoice}</b><p>Click here to STAY</p>`;
   document.querySelector(`#door${internalHint}2`).style.backgroundImage = 'url(./assets/goat.jpg)';
   document.querySelector(`#door${internalHint}2`).innerHTML = '';
 }
