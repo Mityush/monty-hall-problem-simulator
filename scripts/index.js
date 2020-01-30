@@ -233,10 +233,10 @@ function letsGo(userChoice, userWinner, userHint, option) {
     .setAttribute('onclick', 'switchDoors(true)');
   document.querySelector(
     `#door${internalOption}2`,
-  ).innerHTML = `<b class="doortitle">Door #${internalOption}</b><p>Click here to SWITCH</p>`;
+  ).innerHTML = `<b class="doortitle">Door #${internalOption}</b><p>Click here to SWITCH</p>`;
   document.querySelector(
     `#door${internalChoice}2`,
-  ).innerHTML = `<b class="doortitle">Door #${internalChoice}</b><p>Click here to STAY</p>`;
+  ).innerHTML = `<b class="doortitle">Door #${internalChoice}</b><p>Click here to STAY</p>`;
   document.querySelector(`#door${internalHint}2`).style.backgroundImage = 'url(./assets/goat.jpg)';
   document.querySelector(`#door${internalHint}2`).innerHTML = '';
 }
