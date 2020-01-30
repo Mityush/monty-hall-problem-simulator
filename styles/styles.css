@@ -270,4 +270,10 @@ html body div.ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dr
     padding: 0.5rem;
     font-size: 0.95rem;
   }
+  .doors, .doors2 {
+    font-size: 1rem;
+  }
+  .doortitle {
+    font-size: 1.2rem;
+  }
 }
