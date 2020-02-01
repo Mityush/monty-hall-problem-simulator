@@ -206,6 +206,20 @@ html body div.ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dr
   width: 700px;
 }
 
+.ui.dialog {
+  width: 75% !important;
+}
+
+.ui-widget {
+  font-family: "Roboto Mono", monospace;
+}
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea,
+.ui-widget button {
+  font-family: "Roboto Mono", monospace;
+}
+
 @media screen and (max-width: 100000px) {
   html {
     font-size: 18px;
