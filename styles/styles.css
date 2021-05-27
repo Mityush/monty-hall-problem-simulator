@@ -9,6 +9,7 @@ html {
 body {
   margin: 0 auto;
   padding: 0 2rem;
+  background-color: #ded;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -143,7 +144,7 @@ footer {
 }
 
 #rules:hover, #stats:hover, #reset:hover, #about:hover {
-background-color: white;
+  background-color: white;
 }
 
 #reset, #about, #stats {
@@ -169,7 +170,7 @@ background-color: white;
 
 ul {
   padding-left: 1.25rem;
-  margin: 1rem 0; 
+  margin: 1rem 0;
 }
 
 #aboutDialog, #statsDialog {
@@ -185,23 +186,25 @@ li {
   padding-bottom: 0;
 }
 
-
 /* sticky footer */
 html, body {
   height: 100%;
 }
+
 body {
   display: flex;
   flex-direction: column;
 }
+
 .content {
   flex: 1 0 auto;
 }
+
 .footer {
   flex-shrink: 0;
 }
-/* end sticky footer */
 
+/* end sticky footer */
 html body div.ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-draggable.ui-resizable {
   width: 700px;
 }
@@ -213,6 +216,7 @@ html body div.ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dr
 .ui-widget {
   font-family: "Roboto Mono", monospace;
 }
+
 .ui-widget input,
 .ui-widget select,
 .ui-widget textarea,
@@ -260,6 +264,7 @@ html body div.ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dr
   html {
     font-size: 14px;
   }
+
   #message {
     max-width: none;
   }
@@ -269,6 +274,7 @@ html body div.ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dr
   html {
     font-size: 13.5px;
   }
+
   .door, .door2 {
     padding: 1rem;
     margin: 0 1rem;
@@ -280,12 +286,14 @@ html body div.ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dr
     padding: 0.75rem;
     margin: 0 0.75rem;
   }
+
   .title {
     font-size: 1.8rem;
   }
 }
 
 @media screen and (max-width: 375px) {
+
   #stats,
   #reset,
   #rules,
@@ -293,9 +301,11 @@ html body div.ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dr
     padding: 0.5rem;
     font-size: 0.95rem;
   }
+
   .doors, .doors2 {
     font-size: 1rem;
   }
+
   .doortitle {
     font-size: 1.2rem;
   }
