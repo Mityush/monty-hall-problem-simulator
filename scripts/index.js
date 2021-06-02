@@ -12,7 +12,7 @@ C8      2       3       1       <--- WIN if you switch
 C9      3       2       1       <--- WIN if you switch
 -------------------------------------------------------- */
 
-/* VARIABLES
+/* INITIALIZE VARIABLES
 -------------------------------------------------------- */
 // used to determine the winning door
 let randomNum;
@@ -44,25 +44,22 @@ let internalOption;
 // captures the random occurrence of game and stores it as a version #
 let version;
 
-/* FUNCTIONS
--------------------------------------------------------- */
-
 /* MODAL FUNCTIONALITY
 -------------------------------------------------------- */
 // Get the modal
-var rulesDialog = document.getElementById('rulesDialog');
-var aboutDialog = document.getElementById('aboutDialog');
-var statsDialog = document.getElementById('statsDialog');
+let rulesDialog = document.getElementById('rulesDialog');
+let aboutDialog = document.getElementById('aboutDialog');
+let statsDialog = document.getElementById('statsDialog');
 
 // Get the button that opens the modal
-var rulesButton = document.getElementById('rulesButton');
-var aboutButton = document.getElementById('aboutButton');
-var statsButton = document.getElementById('statsButton');
+let rulesButton = document.getElementById('rulesButton');
+let aboutButton = document.getElementById('aboutButton');
+let statsButton = document.getElementById('statsButton');
 
 // Get the <span> element that closes the modal
-var rulesClose = document.getElementById('rulesClose');
-var aboutClose = document.getElementById('aboutClose');
-var statsClose = document.getElementById('statsClose');
+let rulesClose = document.getElementById('rulesClose');
+let aboutClose = document.getElementById('aboutClose');
+let statsClose = document.getElementById('statsClose');
 
 // When the user clicks on the button, open the modal
 rulesButton.onclick = function() {
@@ -154,12 +151,13 @@ function reset() {
   internalWinner = undefined;
   internalHint = undefined;
   internalOption = undefined;
+  goat = undefined;
   stats();
   // reswitch doors
   document.querySelector('#doors').style.display = 'flex';
   document.querySelector('#doors2').style.display = 'none';
   // revert to invitation to play
-  document.querySelector('#message',).innerHTML = '<p class="message">Click on any door above to play! ☝️ 🚪 🐐 🚗</p>';
+  document.querySelector('#message',).innerHTML = '<p class="message">Click on any door above to play!</p>';
   // revert stylesheet state
   document.getElementById('hoversheet12').disabled = false;
   document.getElementById('hoversheet22').disabled = false;
@@ -181,7 +179,7 @@ function reset() {
 }
 
 // CORE GAME LOGIC, STEP 3: Takes a true value if the user switches doors and a false value if the user stays and spits out the appropriate state based on that choice (and updates game stats based on results)
-function switchDoors(bool) {
+function switchDoors(bool, goat) {
   resetP = `<p><i>Click any image to play again!</i></p>`;
   switchDoor = bool;
   document.querySelector('#door12').innerHTML = '';
@@ -195,7 +193,7 @@ function switchDoors(bool) {
   document.querySelector('#door22').setAttribute('onclick', 'reset()');
   document.querySelector('#door32').setAttribute('onclick', 'reset()');
   if (version === 1 || version === 2 || version === 3) {
-    document.querySelector(`#door${internalOption}2`).style.backgroundImage = 'url(./assets/goat2.jpg)';
+    document.querySelector(`#door${internalOption}2`).style.backgroundImage = `url(./assets/goat${ !goat}.jpg)`;
     document.querySelector(`#door${internalChoice}2`).style.backgroundImage = 'url(./assets/car.jpg)';
     if (switchDoor === true) {
       switchLosses++;
@@ -206,7 +204,7 @@ function switchDoors(bool) {
     }
   } else {
     document.querySelector(`#door${internalOption}2`).style.backgroundImage = 'url(./assets/car.jpg)';
-    document.querySelector(`#door${internalChoice}2`).style.backgroundImage = 'url(./assets/goat2.jpg)';
+    document.querySelector(`#door${internalChoice}2`).style.backgroundImage = `url(./assets/goat${ !goat}.jpg)`;
 
     if (switchDoor === true) {
       switchWins++;
@@ -221,24 +219,32 @@ function switchDoors(bool) {
 }
 
 // CORE GAME LOGIC, STEP 2: takes user's choice and randomly generated numbers to set up game state following first click.
-function letsGo(userChoice, userWinner, userHint, option) {
+function letsGo(userChoice, userWinner, userHint, option, goat) {
   internalChoice = userChoice;
   internalWinner = userWinner;
   internalHint = userHint;
   internalOption = option;
+  internalGoat = goat;
   rotateDoors();
   document.getElementById(`hoversheet${internalHint}2`).disabled = true;
   document.querySelector('#message',).innerHTML = `OK, there's a goat behind door #${internalHint}, so the car is either behind door #${internalChoice} (your original choice) or door #${internalOption}.`;
-  document.querySelector(`#door${internalChoice}2`).setAttribute('onclick', 'switchDoors(false)');
-  document.querySelector(`#door${internalOption}2`).setAttribute('onclick', 'switchDoors(true)');
+  document.querySelector(`#door${internalChoice}2`).setAttribute('onclick', 'switchDoors(false, internalGoat)');
+  document.querySelector(`#door${internalOption}2`).setAttribute('onclick', 'switchDoors(true, internalGoat)');
   document.querySelector(`#door${internalOption}2`,).innerHTML = `<b class="doortitle">Door #${internalOption}</b><p>Click here to SWITCH</p>`;
   document.querySelector(`#door${internalChoice}2`,).innerHTML = `<b class="doortitle">Door #${internalChoice}</b><p>Click here to STAY</p>`;
-  document.querySelector(`#door${internalHint}2`).style.backgroundImage = 'url(./assets/goat.jpg)';
+  document.querySelector(`#door${internalHint}2`).style.backgroundImage = `url(./assets/goat${internalGoat}.jpg)`;
   document.querySelector(`#door${internalHint}2`).innerHTML = '';
 }
 
 // CORE GAME LOGIC, STEP 1: takes user choice, generates random numbers and sets game version based on user's first chosen door and randomly generated winning door
 function play(chosenDoor) {
+  // SET GOAT RANDOMNESS
+  let goat;
+  if (Math.round(Math.random()) == 0) {
+    goat = false;
+  } else {
+    goat = true;
+  }
   // GET RANDOM NUMBERS AND SET RELATED VARIABLES
   randomNum = Math.random();
   if (randomNum < 0.333333334) {
@@ -256,10 +262,10 @@ function play(chosenDoor) {
     version = 1;
     if (hint === 0) {
       // hint=2
-      letsGo(1, 1, 2, 3);
+      letsGo(1, 1, 2, 3, goat);
     } else {
       // hint=3
-      letsGo(1, 1, 3, 2);
+      letsGo(1, 1, 3, 2, goat);
     }
   }
   // Version C2 (choice=2, winner=2, hint=1/3)
@@ -267,10 +273,10 @@ function play(chosenDoor) {
     version = 2;
     if (hint === 0) {
       // hint=1
-      letsGo(2, 2, 1, 3);
+      letsGo(2, 2, 1, 3, goat);
     } else {
       // hint=3
-      letsGo(2, 2, 3, 1);
+      letsGo(2, 2, 3, 1, goat);
     }
   }
   // Version C3 (choice=3, winner=3, hint=1/2)
@@ -278,40 +284,40 @@ function play(chosenDoor) {
     version = 3;
     if (hint === 0) {
       // hint=1
-      letsGo(3, 3, 1, 2);
+      letsGo(3, 3, 1, 2, goat);
     } else {
       // hint=2
-      letsGo(3, 3, 2, 1);
+      letsGo(3, 3, 2, 1, goat);
     }
   }
   // Version C4 (choice=1, winner=2, hint=3)
   if (choice === 1 && winner === 2) {
     version = 4;
-    letsGo(1, 2, 3, 2);
+    letsGo(1, 2, 3, 2, goat);
   }
   // Version C5 (choice=2, winner=1, hint=3)
   if (choice === 2 && winner === 1) {
     version = 5;
-    letsGo(2, 1, 3, 1);
+    letsGo(2, 1, 3, 1, goat);
   }
   // Version C6 (choice=3, winner=1, hint=2)
   if (choice === 3 && winner === 1) {
     version = 6;
-    letsGo(3, 1, 2, 1);
+    letsGo(3, 1, 2, 1, goat);
   }
   // Version C7 (choice=1, winner=3, hint=2)
   if (choice === 1 && winner === 3) {
     version = 7;
-    letsGo(1, 3, 2, 3);
+    letsGo(1, 3, 2, 3, goat);
   }
   // Version C8 (choice=2, winner=3, hint=1)
   if (choice === 2 && winner === 3) {
     version = 8;
-    letsGo(2, 3, 1, 3);
+    letsGo(2, 3, 1, 3, goat);
   }
   // Version C9 (choice=3, winner=2, hint=1)
   if (choice === 3 && winner === 2) {
     version = 9;
-    letsGo(3, 2, 1, 2);
+    letsGo(3, 2, 1, 2, goat);
   }
 }
