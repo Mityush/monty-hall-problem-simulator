@@ -239,12 +239,7 @@ function letsGo(userChoice, userWinner, userHint, option, goat) {
 // CORE GAME LOGIC, STEP 1: takes user choice, generates random numbers and sets game version based on user's first chosen door and randomly generated winning door
 function play(chosenDoor) {
   // SET GOAT RANDOMNESS
-  let goat;
-  if (Math.round(Math.random()) == 0) {
-    goat = false;
-  } else {
-    goat = true;
-  }
+  const goat = Math.random() < 0.5;
   // GET RANDOM NUMBERS AND SET RELATED VARIABLES
   randomNum = Math.random();
   if (randomNum < 0.333333334) {
