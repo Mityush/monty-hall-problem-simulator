@@ -1,4 +1,4 @@
-/* POSSIBLE OUTCOMES
+/* LIST OF POSSIBLE OUTCOMES FOR BUILDING GAME LOGIC
 ----------------------------------------------------------
 ID?     choice? winner? hint?   RESULT of switching?
 C1      1       1       2 / 3   <--- LOSE if you switch
@@ -44,7 +44,7 @@ let internalOption;
 // captures the random occurrence of game and stores it as a version #
 let version;
 
-/* MODAL FUNCTIONALITY
+/* MODAL FUNCTIONALITY (RULES, ABOUT, STATS)
 -------------------------------------------------------- */
 // Get the modal
 let rulesDialog = document.getElementById('rulesDialog');
@@ -56,7 +56,7 @@ let rulesButton = document.getElementById('rulesButton');
 let aboutButton = document.getElementById('aboutButton');
 let statsButton = document.getElementById('statsButton');
 
-// Get the <span> element that closes the modal
+// Get the button (x) that closes the modal
 let rulesClose = document.getElementById('rulesClose');
 let aboutClose = document.getElementById('aboutClose');
 let statsClose = document.getElementById('statsClose');
@@ -72,7 +72,7 @@ statsButton.onclick = function() {
   statsDialog.style.display = 'block';
 }
 
-// When the user clicks on <span> (x), close the modal
+// When the user clicks on button (x), close the modal
 rulesClose.onclick = function() {
   rulesDialog.style.display = 'none';
 }
@@ -96,9 +96,9 @@ window.onclick = function(event) {
   };
 }
 
-/* NON-MODAL FUNCTIONALITY
+/* OPERATIONAL
 -------------------------------------------------------- */
-// OPERATIONAL -- alerts the user when stats button is clicked regarding win/loss types
+// alerts the user when stats button is clicked regarding win/loss types
 function stats() {
   stayTotal = stayWins + stayLosses;
 
@@ -132,13 +132,13 @@ function stats() {
       - Losses: ${stayLosses}</p>`;
 }
 
-// OPERATIONAL: switches to second set of doors after first choice is made (called by letsGo function)
+// switches to second set of doors after first choice is made (called by letsGo function)
 function rotateDoors() {
   document.querySelector('#doors').style.display = 'none';
   document.querySelector('#doors2').style.display = 'flex';
 }
 
-// OPERATIONAL -- resets gameplay (but keeps stats)
+// resets gameplay (but keeps stats)
 function reset() {
   // reset all variables other than stats
   version = undefined;
@@ -178,7 +178,9 @@ function reset() {
   document.querySelector('#resetButton').style.display = 'none';
 }
 
-// CORE GAME LOGIC, STEP 3: Takes a true value if the user switches doors and a false value if the user stays and spits out the appropriate state based on that choice (and updates game stats based on results)
+/* CORE GAME LOGIC
+-------------------------------------------------------- */
+// STEP 3: Takes a true value if the user switches doors and a false value if the user stays and spits out the appropriate state based on that choice (and updates game stats based on results)
 function switchDoors(bool, goat) {
   resetP = `<p><i>Click any image to play again!</i></p>`;
   switchDoor = bool;
@@ -218,7 +220,7 @@ function switchDoors(bool, goat) {
   stats();
 }
 
-// CORE GAME LOGIC, STEP 2: takes user's choice and randomly generated numbers to set up game state following first click.
+// STEP 2: takes user's choice and randomly generated numbers to set up game state following first click.
 function letsGo(userChoice, userWinner, userHint, option, goat) {
   internalChoice = userChoice;
   internalWinner = userWinner;
@@ -236,9 +238,9 @@ function letsGo(userChoice, userWinner, userHint, option, goat) {
   document.querySelector(`#door${internalHint}2`).innerHTML = '';
 }
 
-// CORE GAME LOGIC, STEP 1: takes user choice, generates random numbers and sets game version based on user's first chosen door and randomly generated winning door
+// STEP 1: takes user choice, generates random numbers and sets game version based on user's first chosen door and randomly generated winning door
 function play(chosenDoor) {
-  // SET GOAT RANDOMNESS
+  // SET GOAT RANDOMNESS BOOLEAN
   const goat = Math.random() < 0.5;
   // GET RANDOM NUMBERS AND SET RELATED VARIABLES
   randomNum = Math.random();
