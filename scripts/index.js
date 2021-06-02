@@ -182,7 +182,7 @@ function reset() {
 
 // CORE GAME LOGIC, STEP 3: Takes a true value if the user switches doors and a false value if the user stays and spits out the appropriate state based on that choice (and updates game stats based on results)
 function switchDoors(bool) {
-  resetP = `<p>Click any image to reset the game!</p>`;
+  resetP = `<p><i>Click any image to play again!</i></p>`;
   switchDoor = bool;
   document.querySelector('#door12').innerHTML = '';
   document.querySelector('#door22').innerHTML = '';

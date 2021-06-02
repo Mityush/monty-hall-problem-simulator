@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="description" content="Simple, elegant and interactive Monty Hall problem simulator to help you learn about the classic probability puzzle.">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap" rel="stylesheet" />
-  <title>Monty Hall Problem Simulator!</title>
+  <title>Monty Hall Problem Simulator</title>
   <link rel="stylesheet" type="text/css" href="./styles/styles.css" />
   <link rel="preload" as="image" href="/assets/car.jpg">
   <link rel="preload" as="image" href="/assets/goat.jpg">
@@ -23,44 +23,37 @@
     <div id="rulesDialog" class="modal">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title">Rules / How to Play</h1>
+          <h2 class="modal-title">Rules of Play</h2>
           <button id="rulesClose">&times;</button>
         </div>
         <ul>
-          <li>You, as the contestant on a game show, are presented with three doors.</li>
-          <li>Behind two of the three doors are goats, and behind the other door is a new car.</li>
-          <li>First, you choose any door at random.</li>
-          <li>Then, after you make your initial choice, the game show host opens one of the two remaining doors to reveal
-            one of the two goats (the game show host knows where the car is and will never open a door that would reveal
-            the hidden car).</li>
-          <li>Lastly, you are given the option to either stick with your original choice or switch to the other closed
-            door.
+          <li>The goal of this game is to choose the winning door from three available doors. Behind the winning door is a new car, and behind the other two doors are goats.</li>
+          <li>First, the player must choose one of the three doors.</li>
+          <li>Next, the game show host will reveal a goat from behind one of the other two doors (the host always knows where the car is and will never reveal it).</li>
+          <li class="last-li">Lastly, the player can either open the door they chose first, or they can switch to the other closed door. If the door they open reveals a new car, the player wins!
           </li>
-          <li class="last-li">Naturally, you win whatever is behind the door you ultimately choose, which hopefully is a
-            new
-            car!</li>
         </ul>
       </div>
     </div>
     <div id="aboutDialog" class="modal">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title">About the Game</h1>
+          <h2 class="modal-title">About the Game</h2>
           <button id="aboutClose">&times;</button>
         </div>
         <p>Despite being very simple at its core, the Monty Hall problem is an
           oddly confusing probability puzzle that has confounded people for decades, including some otherwise really smart
           folks who simply don't believe the counterintuitive results.</p>
         <p>Here, you can play an interactive, simulated
-          version of the Monty Hall problem (loosely based on the original version of Let's Make a Deal) as many times as
-          you want to try to figure out which strategy works best (and more important, why it works--even though it seems
+          version of the Monty Hall problem (loosely based on the original version of <i>Let's Make a Deal</i>) as many times as
+          you want to try to figure out which strategy works best (and more important, why it works – even though it seems
           like it shouldn't).</p>
       </div>
     </div>
     <div id="statsDialog" class="modal">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title">My Game Stats</h1>
+          <h2 class="modal-title">My Game Stats</h2>
           <button id="statsClose">&times;</button>
         </div>
         <p id="statsContent">
