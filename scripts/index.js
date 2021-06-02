@@ -125,8 +125,8 @@ function stats() {
       <p><b>WHEN I'VE SWITCHED:</b><br>
       - Win Rate: ${switchPercentage}<br>
       - Wins: ${switchWins}<br>
-      - Losses: ${switchLosses}<br><br>
-      <b>WHEN I'VE STAYED:</b><br>
+      - Losses: ${switchLosses}</p>
+      <p><b>WHEN I'VE STAYED:</b><br>
       - Win Rate: ${stayPercentage}<br>
       - Wins: ${stayWins}<br>
       - Losses: ${stayLosses}</p>`;
