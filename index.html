@@ -6,9 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="description" content="Simple, elegant and interactive Monty Hall problem simulator to help you learn about the classic probability puzzle.">
-  <title>Monty Hall Problem Simulator</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <title>Monty Hall Problem Simulator</title>
   <link rel="stylesheet" type="text/css" href="./styles/styles.css" />
   <link rel="preload" as="image" href="/assets/car.jpg">
   <link rel="preload" as="image" href="/assets/goat.jpg">
@@ -16,41 +15,56 @@
   <link id="hoversheet12" rel="stylesheet" type="text/css" href="./styles/door1hov.css" />
   <link id="hoversheet22" rel="stylesheet" type="text/css" href="./styles/door2hov.css" />
   <link id="hoversheet32" rel="stylesheet" type="text/css" href="./styles/door3hov.css" />
-  <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
-  <script src="./scripts/index.js"></script>
 </head>
 
 <body>
   <div class="content">
     <h1 class="title"><span class="titlespan" onclick="reset()">Monty Hall Problem Simulator</span></h1>
-    <div id="rulesDialog" title="Rules / How to Play">
-      <ul>
-        <li>You, as the contestant on a game show, are presented with three doors.</li>
-        <li>Behind two of the three doors are goats, and behind the other door is a new car.</li>
-        <li>First, you choose any door at random.</li>
-        <li>Then, after you make your initial choice, the game show host opens one of the two remaining doors to reveal
-          one of the two goats (the game show host knows where the car is and will never open a door that would reveal
-          the hidden car).</li>
-        <li>Lastly, you are given the option to either stick with your original choice or switch to the other closed
-          door.
-        </li>
-        <li class="last-li">Naturally, you win whatever is behind the door you ultimately choose, which hopefully is a
-          new
-          car!</li>
-      </ul>
+    <div id="rulesDialog" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">Rules of Play</h2>
+          <button id="rulesClose">&times;</button>
+        </div>
+        <ul>
+          <li>The goal of this game is to choose the winning door from three available doors. Behind the winning door is a new car, and behind the other two doors are goats.</li>
+          <li>First, the player must choose one of the three doors.</li>
+          <li>Next, the game show host will reveal a goat from behind one of the other two doors (the host always knows where the car is and will never reveal it).</li>
+          <li class="last-li">Lastly, the player can either open the door they chose first, or they can switch to the other closed door. If the door they open reveals a new car, the player wins!
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="aboutDialog" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">About the Game</h2>
+          <button id="aboutClose">&times;</button>
+        </div>
+        <p>Despite being very simple at its core, the Monty Hall problem is an
+          oddly confusing probability puzzle that has confounded people for decades, including some otherwise really smart
+          folks who simply don't believe the counterintuitive results.</p>
+        <p>Here, you can play an interactive, simulated
+          version of the Monty Hall problem (loosely based on the original version of <i>Let's Make a Deal</i>) as many times as
+          you want to try to figure out which strategy works best (and more important, why it works – even though it seems
+          like it shouldn't).</p>
+      </div>
+    </div>
+    <div id="statsDialog" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">My Game Stats</h2>
+          <button id="statsClose">&times;</button>
+        </div>
+        <p id="statsContent">
+        </p>
+      </div>
     </div>
     <div class="buttons">
-      <button id="rules">Rules</button>
-      <div id="aboutDialog" title="About the Game">Despite being very simple at its core, the Monty Hall problem is an
-        oddly confusing probability puzzle that has confounded people for decades, including some otherwise really smart
-        folks who simply don't believe the counterintuitive results.<br><br>Here, you can play an interactive, simulated
-        version of the Monty Hall problem (loosely based on the original version of Let's Make a Deal) as many times as
-        you want to try to figure out which strategy works best (and more important, why it works--even though it seems
-        like it shouldn't).</div>
-      <button id="about">About</button>
-      <div id="statsDialog" title="My Game Stats"></div>
-      <button id="stats">Stats</button>
-      <button id="reset" class="reset" onclick="reset()">Reset</button>
+      <button id="rulesButton">Rules</button>
+      <button id="aboutButton">About</button>
+      <button id="statsButton" onclick="stats()">Stats</button>
+      <button id="resetButton" class="reset" onclick="reset()">Reset</button>
     </div>
     <div class="doors" id="doors">
       <div class="door" id="door1" onclick="play(1)"><b class="doortitle">Door #1</b></div>
@@ -69,10 +83,11 @@
     </div>
   </div>
   <footer class="footer">
-    <p><b>ABOUT:</b> Built by <a href="https://sjc.sh" target="_blank" rel="noopener">sjc</a> using vanilla JavaScript + a splash of jQuery. Hosted with Netlify.</p>
+    <p><b>ABOUT:</b> Built by <a href="https://sjc.sh" target="_blank" rel="noopener">sjc</a> using 100% vanilla HTML, CSS and JavaScript. Hosted with <a href="https://www.netlify.com" target="_blank" rel="noopener">Netlify</a>.</p>
     <p class="last-footer"><b>DISCLAIMER:</b> You can't actually win anything real on this site, as this is just a
       simulation for educational and entertainment purposes.</p>
   </footer>
+  <script src="./scripts/index.js"></script>
 </body>
 
 </html>
