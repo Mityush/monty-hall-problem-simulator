@@ -1,6 +1,6 @@
 # montyhall
 Vanilla JS Monty Hall Problem Simulator
 
-Live Site: <a href="https://montyhall.io" target="_blank">montyhall.io</a>
+Live Site: [montyhall.io](https://montyhall.io)
 
 Copyright © sjc / activefog
