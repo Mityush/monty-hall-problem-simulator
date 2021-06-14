@@ -1,6 +1,6 @@
 # montyhall
 Vanilla JS Monty Hall Problem Simulator
 
-Copyright © sjc / activefog
+Live Site: https://montyhall.io
 
-LIVE SITE: montyhall.io
+Copyright © sjc / activefog
