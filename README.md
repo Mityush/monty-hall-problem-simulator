@@ -1,5 +1,5 @@
 # montyhall
-Vanilla JS Monty Hall Problem Simulator
+## Vanilla JS Monty Hall Problem Simulator
 
 Live Site: [montyhall.io](https://montyhall.io)
 
