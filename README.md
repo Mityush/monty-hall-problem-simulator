@@ -1,4 +1,4 @@
-# montyhall
+# monty-hall-problem-simulator
 ## Vanilla JS Monty Hall Problem Simulator
 
 Loosely based on the classic *Let's Make a Deal* game show
